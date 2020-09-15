@@ -1,0 +1,29 @@
+<div *ngIf="detail.rating.valueOf() != 0">
+  <br>
+  <b>Rating:</b> {{detail.rating}}
+</div>
+<br>
+<div class="text">
+  <div class="bixText">
+    <b>Bechrijving: </b><br>{{detail.beschrijving}}
+  </div>
+  <br>
+  <div class="bixText">
+    <b>Storyline: </b><br>{{detail.storyline}}
+  </div>
+</div>
+<br>
+<br>
+<div>
+  <b>Acteurs:</b>
+<mat-nav-list *ngFor="let acteur of detail.acteurs">
+  <mat-list-item>{{acteur.rol}} as {{acteur.naam}}</mat-list-item>
+</mat-nav-list>
+</div>
+<br>
+<div>
+  <b>Regisseurs:</b>
+<mat-nav-list *ngFor="let regisseur of detail.regisseurs">
+  <mat-list-item>{{regisseur.naam}}</mat-list-item>
+</mat-nav-list>
+</div>

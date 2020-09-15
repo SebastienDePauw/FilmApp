@@ -1,0 +1,35 @@
+mat-card{
+    height: 500px;
+    margin-bottom: 20px;
+}
+
+.mat-card-title{
+    margin-left: -0.5em;
+}
+
+.mat-card-subtitle{
+    margin-left: -.8em;
+}
+
+.center{
+    display: inline-block;
+    margin: 0 auto;
+}
+
+.button{
+    width: 100%;
+    align-items: baseline;
+}
+
+.mat-error{
+    width: 100%;
+}
+
+.mat-card-img{
+    object-fit: cover ;
+    margin: 1em;
+}
+
+.mat-card-content{
+    margin:1em;
+}

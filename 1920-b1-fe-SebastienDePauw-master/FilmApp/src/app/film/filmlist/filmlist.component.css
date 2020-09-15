@@ -1,0 +1,30 @@
+.loading-indicator {
+    position: fixed;
+    z-index: 999;
+    height: 2em;
+    width: 2em;
+    overflow: show;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+
+  .error{
+    width: 500px;
+    margin: auto;
+  }
+
+  .films{
+    margin:10px;
+  }
+
+  .mat-card{
+    margin-top: 5px;
+    
+  }
+
+  .spinner{
+    align-items: center;
+  }

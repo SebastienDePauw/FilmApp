@@ -1,0 +1,46 @@
+<div fxLayout="row" fxLayoutAlign="center center" class="login-main">
+    <mat-card>
+      <form [formGroup]="user" (ngSubmit)="onSubmit()">
+
+          <h2 mat-header>LOGIN</h2>
+        
+  
+        <mat-card-content fxLayout="column">
+          <mat-form-field>
+            <input
+              matInput
+              placeholder="email"
+              aria-label="email"
+              data-cy="login-email"
+              formControlName="username"
+            />
+          </mat-form-field>
+  
+          <mat-form-field>
+            <input
+              type="password"
+              matInput
+              placeholder="password"
+              aria-label="password"
+              data-cy="login-password"
+              formControlName="password"
+            />
+          </mat-form-field>
+        </mat-card-content>
+        <mat-card-actions fxLayout="row" fxLayoutAlign="space-between center">
+          <a [routerLink]="['/register']"data-cy="register">registreer</a>
+  
+          <button
+            mat-raised-button
+            type="submit"
+            color="primary"
+            data-cy="login-button"
+          >
+            Login
+          </button>
+        </mat-card-actions>
+      </form>
+      <p class="error" *ngIf="errorMessage" data-cy="appError">
+        {{errorMessage}}</p>
+    </mat-card>
+  </div>

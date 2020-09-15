@@ -1,0 +1,13 @@
+.text{
+    display: flex;
+    flex-flow: column;
+    height: 100px;;
+}
+.bigText{
+    display: inline-block;
+    height: 50px;
+}
+
+.mat-list-item{
+    height:1.5em;
+}

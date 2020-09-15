@@ -1,0 +1,32 @@
+<mat-card style="padding-left: 15px;">
+  <div class="container">
+    <div>
+      <button mat-fab color="primary" [routerLink]="['../../list']">
+        <mat-icon>keyboard_backspace</mat-icon>
+      </button>
+      <button *ngIf="checkLogin()" mat-fab color="warn" (click)="deleteFilm()" [routerLink]="['../../list']">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+    <div class="titel">
+    <h1 mat-header>{{ film.titel }}</h1>
+  </div>
+  </div>
+  <mat-card-content>
+    <div class="container">
+      <div class="about">
+        <p>
+          <b>Uitgebracht in:</b> {{ film.jaar }}<br>
+          <br>
+          <b>Categorie:</b> {{film.categorie}}<br>
+          <br>
+          <b>Speelduur:</b> {{ film.minuten }} minuten<br>
+          <app-detail [detail]="film.detail">
+            {{film.detail}}
+          </app-detail>
+        </p>
+      </div>
+      <img src="data:image/png;base64,{{film.poster}}" alt="afbeelding">
+    </div>
+  </mat-card-content>
+</mat-card>

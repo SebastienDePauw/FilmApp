@@ -1,0 +1,23 @@
+.notfound{
+    background: none;
+    background-color: white;
+}
+
+.images{
+    height: 500px;
+}
+
+.button{
+    width: 100%;
+}
+
+.title{    
+    font-size: large;
+}
+
+.card{
+    min-width: 650px;
+    max-width: 750px;
+    background-color: none;
+    border: none;
+}

@@ -1,0 +1,137 @@
+[
+    {
+      "id": 1,
+      "titel": "Joker",
+      "jaar": 2019,
+      "minuten": 122,
+      "categorie": "Misdaad",
+      "poster": "poster1",
+      "detail": {
+        "id": 1,
+        "beschrijving": "Beschrijving",
+        "storyline": "Korte inhoud",
+        "rating": 0,
+        "acteurs": [
+          {
+            "id": 1,
+            "naam": "Robert De Niro",
+            "rol": "Murray Franklin"
+          },
+          {
+            "id": 2,
+            "naam": "Joaquin Phoenix",
+            "rol": "Joker"
+          }
+        ],
+        "regisseurs": [
+          {
+            "id": 1,
+            "naam": "Todd Phillips"
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "titel": "End Game",
+      "jaar": 2019,
+      "minuten": 181,
+      "categorie": "Actie/Sciencefiction",
+      "poster": "poster2",
+      "detail": {
+        "id": 2,
+        "beschrijving": "Beschrijving",
+        "storyline": "Korte inhoud",
+        "rating": 7.5,
+        "acteurs": [
+          {
+            "id": 3,
+            "naam": "Paul Rudd",
+            "rol": "Ant-Man"
+          },
+          {
+            "id": 4,
+            "naam": "Chris Evans",
+            "rol": "Captain America"
+          },
+          {
+            "id": 5,
+            "naam": "Robert Downey jr.",
+            "rol": "Iron man"
+          },
+          {
+            "id": 6,
+            "naam": "Chris Hemsworth",
+            "rol": "Thor"
+          },
+          {
+            "id": 7,
+            "naam": "Jeremy Renner",
+            "rol": "Hawkeye"
+          },
+          {
+            "id": 8,
+            "naam": "Scarlett Johansson",
+            "rol": "Black Widow"
+          },
+          {
+            "id": 9,
+            "naam": "Mark Ruffalo",
+            "rol": "Hulk"
+          },
+          {
+            "id": 10,
+            "naam": "Bradley Cooper",
+            "rol": "Rocket Raccoon"
+          }
+        ],
+        "regisseurs": [
+          {
+            "id": 2,
+            "naam": "Anthony Russo"
+          },
+          {
+            "id": 3,
+            "naam": "Joe Russo"
+          }
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "titel": "Pulp Fiction",
+      "jaar": 1994,
+      "minuten": 154,
+      "categorie": "Misdaad",
+      "poster": "poster3",
+      "detail": {
+        "id": 3,
+        "beschrijving": "Beschrijving",
+        "storyline": "Korte inhoud",
+        "rating": 0,
+        "acteurs": [
+          {
+            "id": 11,
+            "naam": "John Travolta",
+            "rol": "Vincent Vega"
+          },
+          {
+            "id": 12,
+            "naam": "Bruce Willis",
+            "rol": "Budge Coolidge"
+          },
+          {
+            "id": 13,
+            "naam": "Samuel L. Jackson",
+            "rol": "Jules Winnfield"
+          }
+        ],
+        "regisseurs": [
+          {
+            "id": 4,
+            "naam": "Quentin Tarantino"
+          }
+        ]
+      }
+    }
+  ]

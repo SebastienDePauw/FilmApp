@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="filmAPI.Models.Acteur">
+    <Position X="10.25" Y="1" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAABAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Acteur.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="filmAPI.Models.Detail">
+    <Position X="6.75" Y="1" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQiAAAgAhAAAAAAAAAACBAAAAAAAAEEgAAAAAEIABE=</HashCode>
+      <FileName>Models\Detail.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Regisseurs" />
+      <Property Name="Acteurs" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="filmAPI.Models.Gebruiker">
+    <Position X="0.5" Y="1" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAACAAAAAAAABABAAAAAAAAAAAAAIIAAAwAAA=</HashCode>
+      <FileName>Models\Gebruiker.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="WatchList" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="filmAPI.Models.Regisseur">
+    <Position X="10.25" Y="3.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Regisseur.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="filmAPI.Models.Film">
+    <Position X="4" Y="1" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AARCAAAgABAAAAAgAAgACBAAAAAAEAAAgAAAAAAYCBE=</HashCode>
+      <FileName>Models\Film.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Detail" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

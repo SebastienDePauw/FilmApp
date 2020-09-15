@@ -1,0 +1,30 @@
+
+<div fxLayout="column" fxLayoutGap="2%">
+  <mat-card>
+      <mat-form-field>
+          <input matInput
+          (keyup)='filterTitel$.next($event.target.value)'
+          class="filter"
+          placeholder="filter" type="text" #filter
+          data-cy="filterInput" />
+      </mat-form-field>
+  </mat-card>
+  <div *ngIf="(films$ | async) as films;  else loadingOrError">
+  <div class="films" fxLayout="row wrap" fxLayout.xs="column" fxLayoutGap="0.5%" fxLayoutAlign="start">
+      <div class="film" *ngFor="let localfilm of (films$ | async | filmFilter: filterFilmTitel)" fxFlex="0 0 calc(25%-0.5%)" fxFlex.xs="100%">
+          <app-film [film] = "localfilm" data-cy="filmCard"></app-film>
+      </div>
+  </div>
+</div>
+</div>
+<ng-template #loadingOrError>
+    <mat-card class="error" data-cy="appError" *ngIf="errorMessage; else loading">
+       Error loading the film list: {{ errorMessage }}. <br/>
+        Please try again later.
+    </mat-card>
+    <div class="spinner">
+    <ng-template #loading>
+        <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+      </ng-template>
+    </div>
+  </ng-template> 

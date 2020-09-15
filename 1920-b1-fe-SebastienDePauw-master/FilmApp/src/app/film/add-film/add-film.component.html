@@ -1,0 +1,144 @@
+<mat-card style="background-color:whitesmoke;">
+  <mat-card-title>Voeg Film toe:</mat-card-title>
+  <br>
+  <mat-card-content>
+    <mat-card>
+      <form [formGroup]="filmGroup">
+        <h3>Film:</h3>
+        <mat-form-field>
+          <input matInput type="text" aria-label="titel" placeholder="Titel" formControlName="titel" data-cy="titelInput"> 
+          <mat-error *ngIf="filmGroup.get('titel')['errors'] && filmGroup.get('titel').touched" data-cy="titelError">
+            {{ getErrorMessage(filmGroup.get('titel')['errors']) }}
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="number" aria-label="jaar" placeholder="Jaar uitgave" formControlName="jaar" data-cy="jaarInput">
+          <mat-error *ngIf="filmGroup.get('jaar')['errors'] && filmGroup.get('jaar').touched" data-cy="jaarError">
+            {{ getErrorMessage(filmGroup.get('jaar')['errors']) }}
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="number" aria-label="minuten" placeholder="Speelduur (min.)" formControlName="minuten" data-cy="minutenInput">
+          <mat-error *ngIf="filmGroup.get('minuten')['errors'] && filmGroup.get('minuten').touched" data-cy="minutenError">
+            {{ getErrorMessage(filmGroup.get('minuten')['errors']) }}
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-select aria-label="categorie" placeholder="Categorie" formControlName="categorie" data-cy="categorieInput">
+            <mat-option *ngFor="let categorie of categorieen" [value]="categorie">
+              {{ categorie }}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="filmGroup.get('categorie')['errors'] && filmGroup.get('categorie').touched" data-cy="categorieError">
+            {{ getErrorMessage(filmGroup.get('categorie')['errors']) }}
+          </mat-error>
+        </mat-form-field>
+        <br>
+        <strong>kies poster:</strong>
+          <input 
+          class = "bestand"
+          type="file"
+          accept=".PNG"
+          (change)="onFileChange($event)"
+          required />
+      </form>
+    </mat-card>
+    <mat-card>
+      <form [formGroup]="detailGroup" (ngSubmit)='onSubmit()'>
+        <h3>Details:</h3>
+        <div fxLayout="row" fxLayoutAlign="left" class="flex">
+          <div>
+            <mat-card class ="cardbigtext">
+              <h3>Korte beschrijving</h3>
+              <mat-form-field class="bigtext">
+                <textarea matInput type="text" aria-label="beschrijving" placeholder="Korte beschrijving" formControlName="beschrijving" data-cy="beschrijvingInput"></textarea>
+                <mat-error *ngIf="detailGroup.get('beschrijving')['errors'] && detailGroup.get('beschrijving').touched" data-cy="beschrijvingError">
+                  {{ getErrorMessage(detailGroup.get('beschrijving')['errors']) }}
+                </mat-error>
+              </mat-form-field>
+            </mat-card>
+          </div>
+          <br>
+          <div>
+            <mat-card class ="cardbigtext">
+              <h3>Storyline:</h3>
+              <mat-form-field class="bigtext">
+                <textarea matInput type="text" aria-label="storyline" placeholder="Storyline" formControlName="storyline" data-cy="storylineInput"></textarea>
+                <mat-error *ngIf="detailGroup.get('storyline')['errors'] && detailGroup.get('storyline').touched" data-cy="storylineError">
+                  {{ getErrorMessage(detailGroup.get('storyline')['errors']) }}
+                </mat-error>
+              </mat-form-field>
+            </mat-card>
+        </div>
+          <br>
+        <div>
+          <mat-card class="rating">
+              <h3>Rating:</h3>
+              <mat-form-field>
+                <input matInput type="number" aria-label="rating" placeholder="Rating" formControlName="rating" data-cy="ratingInput">
+                <mat-error *ngIf="detailGroup.get('rating')['errors'] && detailGroup.get('rating').touched" data-cy="ratingError">
+                  {{ getErrorMessage(detailGroup.get('rating')['errors']) }}
+                </mat-error>
+              </mat-form-field>
+            </mat-card>
+          </div>
+        </div>
+        <div>
+          <h3>Acteurs: </h3>
+          <div
+          formArrayName="acteurs"
+          *ngFor="
+            let item of detailGroup.get('acteurs')['controls'];
+            let i = index
+          "
+        >
+            <div [formGroupName]="i">
+              <mat-form-field>
+                <input matInput type="text" aria-label="naam" placeholder="Voor- en achternaam" formControlName="naam" data-cy="naamActInput">
+                 <mat-error *ngIf="item.get('naam')['errors'] && item.get('naam').touched" data-cy="naamActError">
+                  {{ getErrorMessage(item.get('naam')['errors']) }}
+                </mat-error>
+              </mat-form-field>
+              <mat-form-field>
+                <input matInput type="text" aria-label="rol" placeholder="Naam rol" formControlName="rol" data-cy="rolInput">
+                 <mat-error *ngIf="item.get('rol')['errors'] && item.get('rol').touched" data-cy="rolError">
+                  {{ getErrorMessage(item.get('rol')['errors']) }}
+                </mat-error> 
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div>
+          <h3>Regisseurs: </h3>
+          <!--<div fromArrayName="regisseurs" *ngFor="let item of detailGroup.get('regisseurs')['controls']; let i = index">-->
+            <div
+            formArrayName="regisseurs"
+            *ngFor="
+              let item of detailGroup.get('regisseurs')['controls'];
+              let i = index
+            "
+          >
+            <div [formGroupName]="i">
+              <mat-form-field>
+                <input matInput type="text" aria-label="naam" placeholder="Voor- en achternaam" formControlName="naam" data-cy="naamRegInput">
+                 <mat-error *ngIf="item.get('naam')['errors'] && item.get('naam').touched" data-cy="naamRegError">
+                  {{ getErrorMessage(item.get('naam')['errors']) }}
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class = "buttons">
+          <button mat-raised-button color="primary" data-cy="submitButton" type="submit" [disabled]='!filmGroup.valid || !detailGroup.valid'>
+            <strong>Toevoegen</strong>
+            <br>
+          </button>
+          <button id="cancel" mat-stroked-button color="primary" [routerLink]="['../list']"><strong>Annuleren</strong></button>
+        </div>
+      </form>
+    </mat-card>
+
+  </mat-card-content>
+</mat-card>
